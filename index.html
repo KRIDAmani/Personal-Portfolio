@@ -131,7 +131,19 @@
   .m{font-family:var(--mono);font-size:12px;color:var(--amber);border:1px solid var(--amber-dim);background:#181510;border-radius:6px;padding:3px 9px}
   .run-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line-soft);padding-top:12px}
   .run-stack{display:flex;flex-wrap:wrap;gap:5px}
-  .run-links{display:flex;gap:12px;font-family:var(--mono);font-size:12px}
+  .run-links{display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:12px}
+  .run-links a{color:var(--green)}
+  .private{color:var(--amber);font-family:var(--mono);font-size:10.5px;border:1px solid var(--amber-dim);border-radius:5px;padding:1px 6px;background:#181510}
+  .sub-prompt{font-family:var(--mono);font-size:13px;color:var(--muted);margin:38px 0 8px}
+  .sub-prompt .u{color:var(--green)}
+  .breadth-lead{font-size:15px;color:#c2c9ce;line-height:1.6;max-width:64ch;margin:0 0 20px}
+  .breadth-lead b{color:var(--text);font-weight:500}
+  .domains{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+  .dom{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:14px 15px}
+  .dom .dh{font-family:var(--mono);font-size:12px;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:7px}
+  .dom .dh i{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+  .dom p{font-size:13px;color:#aab1b7;line-height:1.55;margin:0 0 10px}
+  .dom .dl{display:flex;flex-wrap:wrap;gap:5px 12px;font-family:var(--mono);font-size:11.5px}
 
   /* skills graph */
   .graph-wrap{border:1px solid var(--line);border-radius:12px;background:var(--panel);position:relative;overflow:hidden}
@@ -345,7 +357,7 @@
           <div class="run-metrics"><span class="m">F 0.847</span><span class="m">AUC 0.974</span><span class="m">baseline F 0.283</span></div>
           <div class="run-foot">
             <div class="run-stack"><span class="tag">Sentence-BERT</span><span class="tag">scikit-learn</span><span class="tag">NetworkX</span></div>
-            <div class="run-links"><a href="#" data-todo="gh">GitHub ↗</a></div>
+            <div class="run-links"><a href="https://github.com/KRIDAmani/Moteur-de-Recherche-Scientifique" target="_blank" rel="noopener">GitHub ↗</a><span class="private">private</span></div>
           </div>
         </div>
 
@@ -356,7 +368,7 @@
           <div class="run-metrics"><span class="m">100% success</span><span class="m">2 envs</span><span class="m">W&amp;B tracked</span></div>
           <div class="run-foot">
             <div class="run-stack"><span class="tag">PyTorch</span><span class="tag">Stable-Baselines3</span><span class="tag">Gymnasium</span></div>
-            <div class="run-links"><a href="#" data-todo="hf">HF ↗</a><a href="#" data-todo="gh">GitHub ↗</a></div>
+            <div class="run-links"><a href="https://github.com/KRIDAmani/Hands-On-Reinforcement-Learning" target="_blank" rel="noopener">GitHub ↗</a></div>
           </div>
         </div>
 
@@ -367,18 +379,56 @@
           <div class="run-metrics"><span class="m">4-bit quant</span><span class="m">3 families</span></div>
           <div class="run-foot">
             <div class="run-stack"><span class="tag">PyTorch</span><span class="tag">diffusers</span><span class="tag">bitsandbytes</span></div>
-            <div class="run-links"><a href="#" data-todo="gh">GitHub ↗</a></div>
+            <div class="run-links"><a href="https://github.com/KRIDAmani/GANs-and-Diffusion" target="_blank" rel="noopener">GitHub ↗</a></div>
           </div>
         </div>
 
-        <div class="run" style="justify-content:center;align-items:center;text-align:center;border-style:dashed">
-          <div style="font-family:var(--mono);font-size:13px;color:var(--faint);line-height:1.8">
-            <div style="color:var(--muted)">+ more on the way</div>
-            <div>pulling from GitHub / GitLab</div>
-            <div style="color:var(--green-dim)">git log --oneline</div>
+        <div class="run">
+          <div class="run-top"><span>run · meeting-manager</span><span class="run-status">● service</span></div>
+          <h3>Meeting Manager</h3>
+          <p>An end-to-end meeting coordination service — create events, send invites, track RSVPs — built like production: containerized, CI/CD, and full observability with Prometheus and Grafana.</p>
+          <div class="run-metrics"><span class="m">observability</span><span class="m">CI/CD</span><span class="m">dockerized</span></div>
+          <div class="run-foot">
+            <div class="run-stack"><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span></div>
+            <div class="run-links"><a href="https://github.com/KRIDAmani/Meeting_Manager" target="_blank" rel="noopener">GitHub ↗</a><span class="private">private</span></div>
           </div>
         </div>
 
+      </div>
+
+      <p class="sub-prompt"><span class="u">amani@portfolio</span>:~$ <span style="color:var(--amber)">import</span> breadth</p>
+      <p class="breadth-lead">I don't define myself by one field. Curiosity keeps pulling me sideways — <b>algorithms into optimization into decision-making, systems into backends into data</b>. A sample of where that's gone:</p>
+      <div class="domains">
+        <div class="dom">
+          <div class="dh" style="color:var(--cyan)"><i style="background:var(--cyan)"></i>data engineering &amp; viz</div>
+          <p>An interactive atlas of French agriculture (1990–2020) — crop orientation by region, mapped and analyzed.</p>
+          <div class="dl"><a href="https://github.com/KRIDAmani/AgriScopeFR" target="_blank" rel="noopener">AgriScopeFR ↗</a></div>
+        </div>
+        <div class="dom">
+          <div class="dh" style="color:var(--amber)"><i style="background:var(--amber)"></i>optimization &amp; algorithms</div>
+          <p>The travelling salesman problem solved with ant-colony optimization; a predictive taxi-dispatch simulator.</p>
+          <div class="dl"><a href="https://github.com/KRIDAmani/TravellingSalesmanProblem" target="_blank" rel="noopener">TSP ↗</a><span style="color:var(--faint)">taxi-dispatch · private</span></div>
+        </div>
+        <div class="dom">
+          <div class="dh" style="color:var(--amber)"><i style="background:var(--amber)"></i>computer vision</div>
+          <p>Image classification and semantic segmentation pipelines from coursework and side experiments.</p>
+          <div class="dl"><span style="color:var(--faint)">Image_Classification · segmentation · GitLab</span></div>
+        </div>
+        <div class="dom">
+          <div class="dh" style="color:var(--green)"><i style="background:var(--green)"></i>full-stack &amp; systems</div>
+          <p>A library management system, a real-time client-server chess game, and stock management written in C.</p>
+          <div class="dl"><a href="https://github.com/KRIDAmani/BookVerse-A-Library-Management-System" target="_blank" rel="noopener">BookVerse ↗</a><a href="https://github.com/KRIDAmani/Chess" target="_blank" rel="noopener">Chess ↗</a><a href="https://github.com/KRIDAmani/Stock-Management" target="_blank" rel="noopener">Stock ↗</a></div>
+        </div>
+        <div class="dom">
+          <div class="dh" style="color:var(--green)"><i style="background:var(--green)"></i>networks</div>
+          <p>Network topologies designed and simulated end-to-end in Cisco Packet Tracer.</p>
+          <div class="dl"><a href="https://github.com/KRIDAmani/Cisco-Project" target="_blank" rel="noopener">Cisco-Project ↗</a></div>
+        </div>
+        <div class="dom">
+          <div class="dh" style="color:var(--muted)"><i style="background:var(--muted)"></i>your call</div>
+          <p>Sovrizon (app + API) and Woofit-MoveIt look substantial, but I don't know them yet — tell me and I'll feature the strongest as a full case study.</p>
+          <div class="dl"><span style="color:var(--amber)">→ tell me about these</span></div>
+        </div>
       </div>
     </div>
   </section>
