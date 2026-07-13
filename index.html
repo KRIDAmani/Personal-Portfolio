@@ -46,6 +46,39 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   }
+  @media (max-width: 768px) {
+    body { overflow-x: hidden; }
+    nav { padding: 14px 16px !important; gap: 10px; flex-wrap: wrap; }
+    nav > a { flex: 1 1 auto; min-width: 0; }
+    nav > div:last-child { margin-left: auto; }
+    nav button { min-height: 36px; }
+    header[data-hero] { padding: 108px 16px 72px !important; }
+    header[data-hero] [data-hero-grid] { gap: 12px; }
+    header[data-hero] [data-hero-grid] > div:first-child { flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 18px; }
+    header[data-hero] [data-hero-grid] > div:first-child span { width: 20px; }
+    header[data-hero] h1 { font-size: clamp(38px, 10vw, 58px) !important; line-height: .98; }
+    header[data-hero] [data-fig-panel] {
+      position: relative !important;
+      inset: auto !important;
+      right: auto !important;
+      top: auto !important;
+      transform: none !important;
+      width: min(300px, 78vw) !important;
+      margin: 18px 0 0 !important;
+    }
+    header[data-hero] [data-fig-glow], header[data-hero] [data-fig-shadow] { display: none; }
+    header[data-hero] p { font-size: 15px !important; line-height: 1.6; margin-bottom: 24px; padding: 0 4px; }
+    header[data-hero] > div > div:last-of-type { gap: 18px 22px; margin-top: 32px; }
+    header[data-hero] > div > div:last-of-type > div { flex: 1 1 calc(50% - 12px); min-width: 0; }
+    main section, section[id] { padding-left: 16px !important; padding-right: 16px !important; }
+    section[id="story"] { grid-template-columns: 1fr !important; gap: 28px !important; padding-top: 40px !important; padding-bottom: 100px !important; }
+    section[id="story"] > div:last-child { gap: 18px !important; }
+    section[id="story"] p { font-size: 15px !important; }
+    #skills > div:last-child > div { gap: 20px !important; }
+    #skills > div:last-child > div > div { padding: 20px 18px !important; }
+    #skills > div:last-child > div > div span { font-size: 13px; padding: 8px 12px; }
+    #photography > div:last-child { grid-template-columns: 1fr !important; }
+  }
 </style>
 </helmet>
 <div data-portfolio-root="" style="--bg:#100E0C; --bg-2:#17140F; --bg-3:#211C15; --fg:#ECE6DC; --fg-2:#B4AA9A; --fg-3:#7C7364; --line:rgba(236,230,220,0.10); --line-2:rgba(236,230,220,0.18); --accent:#E0965A; --accent-2:#CF7B41; --accent-soft:rgba(224,150,90,0.14); background:var(--bg); color:var(--fg); min-height:100vh; overflow-x:hidden; transition:background .6s ease, color .6s ease; position:relative;">
