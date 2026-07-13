@@ -93,7 +93,7 @@ export const projects = [
     challengeEn: "As a four-person team, we rebuilt it around one rule: the keys never leave the server. A trusted component handles everything sensitive, images only ever appear for a moment, and each one carries an invisible mark so any leak can be traced.",
     challengeFr: "En équipe de quatre, nous l'avons reconstruit autour d'une règle : les clés ne quittent jamais le serveur. Un composant de confiance gère tout ce qui est sensible, les images n'apparaissent qu'un instant, et chacune porte une marque invisible pour tracer toute fuite.",
     metrics: [
-      { value: "0", label: "keys ever sent to the client", labelFr: "clé jamais envoyée au client" },
+      { value: "0", valueStyle: " display:inline-block; transform:translateY(-60px);", label: "keys ever sent to the client", labelFr: "clé jamais envoyée au client" },
       { value: "60s", label: "the only window an image is visible", labelFr: "seule fenêtre où une image est visible" }
     ],
     technologies: ["Python", "FastAPI", "React", "AES-256"]
