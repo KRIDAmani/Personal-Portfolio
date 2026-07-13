@@ -459,7 +459,7 @@
 }">
 class Component extends DCLogic {
   state = {
-    theme: 'dark', lang: 'en',
+    theme: 'light', lang: 'en',
     content: null,
     activeDomain: null,
     hoveredSkillGroup: null,
@@ -509,7 +509,7 @@ class Component extends DCLogic {
     'hero.sub':"I'm an engineer who likes digging into data, AI and the systems behind them. What keeps me going is curiosity, working with good people, and building things that are genuinely useful.",
     'hero.cta1':'Explore my work →','hero.cta2':'Get in touch',
     'hero.stat1':'Top of class, ENSI','hero.stat2':'Engineering domains explored','hero.stat3':'Faster search, BMW project',
-    'hero.figcap':'scroll to turn ↻','hero.scroll':'Scroll',
+    'hero.figcap':'move your cursor to tilt','hero.scroll':'Scroll',
     'observer.eyebrow':'The Observer',
     'observer.quote':'Photography taught me to slow down and really look at a scene before reaching for the camera. Engineering turned out to ask the same thing: take the time to understand the problem, and the right approach usually becomes clear.',
     'story.eyebrow':'My Story','story.title':'I followed the questions.',
@@ -567,10 +567,14 @@ class Component extends DCLogic {
 
   componentDidMount() {
     try {
-      const t = localStorage.getItem('ak-theme'); if (t) this.applyTheme(t);
+      const t = localStorage.getItem('ak-theme');
+      if (t) this.applyTheme(t); else this.applyTheme('light');
       const l = localStorage.getItem('ak-lang');
       if (l) this.applyLang(l); else this.applyLang(this.props.defaultLanguage || 'en');
-    } catch(e){}
+    } catch(e){
+      this.applyTheme('light');
+      this.applyLang(this.props.defaultLanguage || 'en');
+    }
     this.applyAccent();
     this.applyResponsive();
     this._onResize = () => this.applyResponsive();
@@ -642,14 +646,8 @@ class Component extends DCLogic {
 
   onScroll() {
     const y = window.scrollY;
-    const dy = y - this._lastY; this._lastY = y;
-    if (this.props.figurineTurntable ?? true) {
-      // scroll down -> tilt right (positive), scroll up -> tilt left (negative)
-      // clamp so the flat figurine never rotates edge-on and vanishes
-      this._targetRot += dy * 0.06;
-      if (this._targetRot > 32) this._targetRot = 32;
-      if (this._targetRot < -32) this._targetRot = -32;
-    }
+    this._lastY = y;
+    this._targetRot = 0;
     const h = document.documentElement.scrollHeight - window.innerHeight;
     const bar = document.querySelector('[data-scroll-bar]');
     if (bar) bar.style.width = (h > 0 ? (y / h * 100) : 0) + '%';
